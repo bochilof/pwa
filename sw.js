@@ -9,7 +9,7 @@ const resourcesToPrecache = [
 ];
 
 self.addEventListener('install', (evento) => {
-     evento.waitUtil(
+     evento.waitUntil(
           caches.open(cacheName)
           .then(cache => (cache.addAll(resourcesToPrecache))),
      );
