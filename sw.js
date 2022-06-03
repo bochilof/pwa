@@ -1,11 +1,11 @@
-const cacheName = 'v1.3';
+const cacheName = 'v1.4';
 
 const resourcesToPrecache = [
      '/',
      '/index.html',
      '/default.css',
      '/logo192.png',
-     '/logo512.png'
+     '/logo512.png',
 ];
 
 self.addEventListener('install', (evento) => {
@@ -19,7 +19,5 @@ self.addEventListener('fetch', (evento) => {
      evento.respondWith(
           caches.match(evento.request)
           .then(cacheResponse => (cacheResponse || fetch(evento.request))),
-     ).catch((erro) => {
-          console.log("Erro aqui: ",erro)
-     });
+     );
 });
