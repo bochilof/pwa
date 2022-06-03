@@ -1,0 +1,23 @@
+const cacheName = 'v1';
+
+const resourcesToPrecache = [
+     '/',
+     '/index.html',
+     '/default.css',
+     '/logo192.png',
+     '/logo512.png',
+];
+
+self.addEventListener('install', (evento) => {
+     evento.waitUtil(
+          caches.open(cacheName)
+          .then(cache => (cache.addAll(resourcesToPrecache))),
+     );
+});
+
+self.addEventListener('fetch', (evento) => {
+     evento.respondWith(
+          caches.match(evento.request)
+          .then(cacheResponse => (cacheResponse || fetch(evento.request))),
+     );
+});
