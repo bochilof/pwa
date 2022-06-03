@@ -19,5 +19,7 @@ self.addEventListener('fetch', (evento) => {
      evento.respondWith(
           caches.match(evento.request)
           .then(cacheResponse => (cacheResponse || fetch(evento.request))),
-     );
+     ).catch((erro) => {
+          console.log("Erro aqui: ",erro)
+     });
 });

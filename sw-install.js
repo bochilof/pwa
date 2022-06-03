@@ -7,4 +7,4 @@ if('serviceWorker' in navigator){
                console.log('ServiceWorker não registrado. Erro: ', erro);
           });
      });
-}
+};
