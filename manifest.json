@@ -4,6 +4,7 @@
      "name": "Aplicação PWA",
      "display": "standalone",
      "theme_color": "#242424",
+     "start_url": "/index.html",
      "icons": [
        {
          "src": "logo192.png",
@@ -15,6 +16,5 @@
          "type": "image/png",
          "sizes": "512x512"
        }
-     ],
-     "start_url": "/index.html"
+     ]
    }
