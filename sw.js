@@ -6,6 +6,7 @@ const resourcesToPrecache = [
      '/default.css',
      '/logo192.png',
      '/logo512.png',
+     '/sw-install.js',
 ];
 
 self.addEventListener('install', (evento) => {
